@@ -99,25 +99,56 @@ def main():
       print (" ")
 
       while True:  
-          print("Please use the following short codes :\n cc - to create a new account  ,\n  da - to diplay existing account ,\n fa - to find an existing account name , \n ex to exit password locker")
+          print("Please use the following short codes :\n cc - to create new account  ,\n li - Log in , \n da - to diplay existing account ,\n fa - to find an existing account name , \n ex to exit password locker")
           short_code = input().lower()
 
      
           if short_code == "cc":
-        
-               print ("-"*15)
-               print (" ")
-               print ("To create a new user account: ")
-               first_name = input("Please enter your first name:-  ")
-               user_name = input("Please enter your preferred username :-  ")
-               password = str(input ("Please enter your desired password:- "))
+             print ("-"*15)
+             print (" ")
+             print ("To create a new user account: ")
+             first_name = input("Please enter your first name:-  ")
+             user_name = input("Please enter your preferred username :-  ")
+             password = str(input ("Please enter your desired password:- "))
 
-               save_user(create_user(first_name,user_name,password))
-               print("")
-               print(f"New account has been created for : {first_name} \n with username :{user_name} \n using password: {password}")
+             save_user(create_user(first_name,user_name,password))
+             print("")
+             print(f"New account has been created for : {first_name} \n with username :{user_name} \n using password: {password}")
 
-               
-               
+          elif short_code == "li":
+              print("-"*60)
+              print(" ")
+              print(" To login , enter your account deails : ")
+              user_name = input("Enter your first name :- ")
+              password = str(input("Enter your password :- "))
+              user_exists = verify_user(user_name,password)
+
+          if user_exists == user_name :
+              print(" ")
+              print (f" Welcome back {user_name} . /n Please choose an option to continue")
+              print(" ")
+
+              while True:
+               print("Please use the following short codes :\n cn - to create new credential  , \n  dc - to diplay existing credential ,\n copy- to copy password ,\n ex- to Exit")
+               short_code = input(" Enter a choice").lower()
+
+    
+
+
+
+          elif short_code == "ex":
+               print("-"*60)
+               print(" ")
+               print(" To login , enter your account deails : ")
+               break       
+
+          elif short_code == "ex":
+               print("Bye....we hope you again visit soon")
+               break
+
+          elif short_code == "ex":
+               print("Bye....we hope you again visit soon")
+               break           
 
           elif short_code == "ex":
                print("Bye....we hope you again visit soon")
