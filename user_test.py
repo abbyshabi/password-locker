@@ -5,14 +5,13 @@ import pyperclip
 class TestContact(unittest.TestCase):
 
     '''
-    Test class that defines test cases for the contact class behaviours.
+    Test class that defines test cases for the class behaviours.
 
-    Args:
-        unittest.TestCase: TestCase class that helps in creating test cases
-    '''
+   '''
+
     def setUp(self):
         '''
-        Set up method to run before each test cases.
+        Set up method to run before each test cases tp check if the class initialized properly
         '''
         self.new_user = User("Oluwadamilola","Shabi","flower12")
     def test_init(self):
