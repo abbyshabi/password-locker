@@ -18,16 +18,4 @@ class Credentials:
         '''
 
         Credentials.credential_list.remove(self)
-
-@classmethod
-def find_by_name(cls, user_account):
-        """Method that takes in a name and returns a credential that matches that particular name
-        Args:
-            name: account_name that has a password
-        Returns:
-            The account_name and it's corresponding PassWord
-        """
-
-        for credential in cls.credential_list:
-            if credential.user_account == user_account:
-                return credential
+    
