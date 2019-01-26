@@ -18,4 +18,10 @@ class Credentials:
         '''
 
         Credentials.credential_list.remove(self)
-    
+
+    @classmethod
+    def display_credential(cls):
+        """
+        Method which displays all credentials list
+        """
+        return cls.credential_list

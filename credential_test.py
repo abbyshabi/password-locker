@@ -54,7 +54,12 @@ class TestCredential(unittest.TestCase):
 
             self.new_credential.delete_credential()
             self.assertEqual(len(Credentials.credential_list),1)
-    
+
+    def test_display_credential(self):
+        """
+        This is to test if a user can display all accounts in their credentials
+        """
+        self.assertEqual(Credentials.display_credential(), Credentials.credential_list)
 
 if __name__ ==  '__main__':
     unittest.main() 
