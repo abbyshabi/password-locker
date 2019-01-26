@@ -52,7 +52,7 @@ class TestCredential(unittest.TestCase):
             test_credential = Credentials("user","test123") 
             test_credential.save_credential()
 
-            self.new_credential.test_delete_credential()
+            self.new_credential.delete_credential()
             self.assertEqual(len(Credentials.credential_list),1)
     
 

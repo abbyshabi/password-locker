@@ -7,6 +7,14 @@ class Credentials:
          self.account_password = account_password
 
     def save_credential(self):
-        '''save_contact method saves contact objects into contact list
+        '''save_credential method saves credential objects into credential list
         '''
         Credentials.credential_list.append(self)
+
+    def delete_credential(self):
+
+        '''
+        delete_credential method deletes a saved account from the credential_list
+        '''
+
+        Credentials.credential_list.remove(self)
