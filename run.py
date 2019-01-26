@@ -115,6 +115,28 @@ def main():
 
              while confirm_password != password :
                  print("sorry your passwords do not match")
+                 print("Enter your password again")
+                 password = str(input ("Please enter your desired password:- "))
+                 confirm_password = str(input ("Please confirm your password:- "))
+
+             else:
+                 print(f" Congratulations {user_name}! You have created your account.")
+                 print(" ")
+                 print(" Now login to to your credential Account")
+                 new_user_name = input("Please enter your username :-  ") 
+                 new_password = str(input ("Please enter your password:- ")) 
+                  
+             while new_user_name !=  user_name or new_password != password:
+                 print("you have entered a wrong username and password")
+                 print("Please enter your logon information again....")
+                 new_user_name = input("Please enter your username :-  ") 
+                 new_password = str(input ("Please enter your password:- ")) 
+             else:
+                 print(f"Welcome {new_user_name} to your Credential Account")
+                 print(" ")
+
+
+
             
 
              save_user(create_user(first_name,user_name,password))
