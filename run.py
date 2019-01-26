@@ -45,16 +45,23 @@ def delete_credentials(credential):
     This is a function to delete credentials by the user 
     '''
     return Credentials.delete_credential(credential)
+
+def verify_user(user_name,password):
+	'''
+	Function that checks if the username already exists in the system
+	'''
+	checking_user = Credential.check_user(user_name,password)
+	return checking_user
  
 #def find_credentials(name):
-    '''
+ #   '''
 
-    '''
+ #   '''
    # return Credentials.find_by_name(user_account)
 
 #def check_existing_credentials(name):
-    '''
-    '''
+#    '''
+ #   '''
  #   return Credentials.find_by_name(name)
 
 def display_credentials():
@@ -89,10 +96,35 @@ def main():
       first_name = input()
 
       print(f" Hello {first_name} what would you like to do today?")
-      print ('/n')
+      print (" ")
 
       while True:  
           print("Please use the following short codes :\n cc - to create a new account  ,\n  da - to diplay existing account ,\n fa - to find an existing account name , \n ex to exit password locker")
+          short_code = input().lower()
+
+     
+          if short_code == "cc":
+        
+               print ("-"*15)
+               print (" ")
+               print ("To create a new user account: ")
+               first_name = input("Please enter your first name:-  ")
+               user_name = input("Please enter your preferred username :-  ")
+               password = str(input ("Please enter your desired password:- "))
+
+               save_user(create_user(first_name,user_name,password))
+               print("")
+               print(f"New account has been created for : {first_name} \n with username :{user_name} \n using password: {password}")
+
+               
+               
+
+          elif short_code == "ex":
+               print("Bye....we hope you again visit soon")
+               break
+
+               
+            
 
 if __name__ == '__main__':
 
