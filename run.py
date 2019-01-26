@@ -112,6 +112,10 @@ def main():
              user_name = input("Please enter your preferred username :-  ")
              password = str(input ("Please enter your desired password:- "))
              confirm_password = str(input ("Please confirm your password:- "))
+             save_user(create_user(first_name,user_name,password))
+             print("")
+             print(f"New account has been created for : {first_name} \n with username :{user_name} \n using password: {password}")
+             print("")
 
              while confirm_password != password :
                  print("sorry your passwords do not match")
@@ -120,6 +124,8 @@ def main():
                  confirm_password = str(input ("Please confirm your password:- "))
 
              else:
+                 
+
                  print(f" Congratulations {user_name}! You have created your account.")
                  print(" ")
                  print(" Now login to to your credential Account")
@@ -147,7 +153,7 @@ def main():
               print("-"*60)
               print(" ")
               print(" To login , enter your account deails : ")
-              user_name = input("Enter your first name :- ")
+              user_name = input("Enter your usename name :- ")
               password = str(input("Enter your password :- "))
               user_exists = verify_user(user_name,password)
 

@@ -18,6 +18,13 @@ class Credentials:
         '''
 
         Credentials.credential_list.remove(self)
+    @classmethod
+    def find_by_name(cls,user_account):
+        '''
+        '''
+        for credential in cls.credential_list:
+            if credential.user_account == user_account:
+                return credential
 
     @classmethod
     def display_credential(cls):
