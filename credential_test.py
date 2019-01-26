@@ -42,17 +42,19 @@ class TestCredential(unittest.TestCase):
         """
         The tear down method cleans up credential list after each test has been run
         """
-        Credentials.credentials_list = []
+        Credentials.credential_list = []
     
-    def test_save_multiple_credentials(self):
+    def test_delete_credential(self):
             '''
-            test_save_multiple_contact to check if we can save multiple contact
-            objects to our contact_list
+            This to test if we can remove an account from our credential list
             '''
             self.new_credential.save_credential()
-            test_credential = Credentials("user","user123") 
+            test_credential = Credentials("user","test123") 
             test_credential.save_credential()
-            self.assertEqual(len(Credentials.credential_list),2)
+
+            self.new_credential.test_delete_credential()
+            self.assertEqual(len(Credentials.credential_list),1)
+    
 
 if __name__ ==  '__main__':
     unittest.main() 
