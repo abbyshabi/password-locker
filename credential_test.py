@@ -10,21 +10,24 @@ class TestCredential(unittest.TestCase):
         """
         The setUp method will run before each test case
         """
-        self.new_account = Credentials('Twitter','fog123')
+        self.new_credential = Credentials('Twitter','fog123')
 
     def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_account.account_name,"Twitter")
-        self.assertEqual(self.new_account.password,"fog123")  
+        self.assertEqual(self.new_credential.user_account,"Twitter")
+        self.assertEqual(self.new_credential.account_password,"fog123")  
 
-     def test_save_account(self):
+    def test_save_account(self):
         '''
         test_save_contact test case to test if the contact object is saved into
          the contact list
         '''
-        self.new_account.save_account() 
-        self.assertEqual(len(account.account_list),1)    
+        self.new_credential.save_credential() 
+        self.assertEqual(len(Credentials.credential_list),1)  
 
+
+if __name__ ==  '__main__':
+    unittest.main() 
