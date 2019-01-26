@@ -1,4 +1,5 @@
 import unittest
+import pyperclip
 from user import User
 
 class TestUser(unittest.TestCase):
@@ -8,8 +9,8 @@ class TestUser(unittest.TestCase):
     def setUp(self):
      ''' The Setup methoid will run before each test case is conducted
      '''
-
-     def test_init(self):
+     self.new_user = User ("Oluwadamilola", "shabi","flower12")
+    def test_init(self):
         '''
         test_init test case to test if the object is initialized properly
         '''
