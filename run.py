@@ -64,7 +64,13 @@ def display_credentials():
     return Credentials.display_credential()
 
 def main():
-      print("                      This is the Password Locker! Hello and welcome ")  
+      print("")
+      print("")
+    
+      print("                                           WELCOME TO THE .....|| ")  
+      print("                                                               ||  ")
+      print("                                                               ||  ")
+      print("                                                               vv ")
       print("'                                                                           /$$       /$$                        /$$                        /$$")
       print("'                                                                          | $$      | $$                       | $$                       | $$")
       print("'    /$$$$$$  /$$$$$$  /$$$$$$$/$$$$$$$/$$  /$$  /$$ /$$$$$$  /$$$$$$  /$$$$$$$      | $$       /$$$$$$  /$$$$$$| $$   /$$ /$$$$$$  /$$$$$$| $$")
@@ -76,6 +82,18 @@ def main():
       print("'  | $$                                                                                                                                        ")
       print("'  | $$                                                                                                                                        ")
       print("'  |__/                                                                                                                                        ")
+
+      print(" ")
+
+      print(" please what is your name?")
+      first_name = input()
+
+      print(f" Hello {first_name} what would you like to do today?")
+      print ('/n')
+
+      while True:  
+          print("Please use the following short codes :\n cc - to create a new account  ,\n  da - to diplay existing account ,\n fa - to find an existing account name , \n ex to exit password locker")
+
 if __name__ == '__main__':
 
     main()               
