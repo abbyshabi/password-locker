@@ -18,3 +18,5 @@ class Credentials:
         '''
 
         Credentials.credential_list.remove(self)
+        
+    @classmethod
