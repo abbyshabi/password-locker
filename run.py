@@ -51,7 +51,7 @@ def verify_user(user_name,password):
 	'''
 	Function that checks if the username already exists in the system
 	'''
-	checking_user = Credential.check_user(user_name,password)
+	checking_user = Credentials.check_user(user_name,password)
 	return checking_user
  
 #def find_credentials(name):
@@ -111,6 +111,11 @@ def main():
              first_name = input("Please enter your first name:-  ")
              user_name = input("Please enter your preferred username :-  ")
              password = str(input ("Please enter your desired password:- "))
+             confirm_password = str(input ("Please confirm your password:- "))
+
+             while confirm_password != password :
+                 print("sorry your passwords do not match")
+            
 
              save_user(create_user(first_name,user_name,password))
              print("")
@@ -137,19 +142,19 @@ def main():
 
 
 
-          elif short_code == "ex":
-               print("-"*60)
-               print(" ")
-               print(" To login , enter your account deails : ")
-               break       
+          #elif short_code == "ex":
+          #     print("-"*60)
+          #     print(" ")
+          #     print(" To login , enter your account deails : ")
+          #     break       
 
-          elif short_code == "ex":
-               print("Bye....we hope you again visit soon")
-               break
+          #elif short_code == "ex":
+          #     print("Bye....we hope you again visit soon")
+          #     break
 
-          elif short_code == "ex":
-               print("Bye....we hope you again visit soon")
-               break           
+          #elif short_code == "ex":
+          #     print("Bye....we hope you again visit soon")
+          #     break           
 
           elif short_code == "ex":
                print("Bye....we hope you again visit soon")
