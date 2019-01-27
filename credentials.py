@@ -38,9 +38,20 @@ class Credentials:
         """
         return cls.credential_list
 
-    def generate_password(self,stringLength=8,char= string.ascii_letters+string.digits):
+    def generate_password(stringLength=8,char= string.ascii_letters+string.digits):
       '''
       '''
 
       gen_pass = ''.join(random.choice(char) for i in range(stringLength))
       return gen_pass
+
+    @classmethod
+    def credential_exists(cls,name):
+        """
+        This method would check if a certain credential exists
+        """
+        for credential in cls.credential_list:
+            if credential.user_account == name:
+                return True
+            return False
+
