@@ -26,10 +26,21 @@ class Credentials:
     @classmethod
     def find_by_name(cls,user_account):
         '''
+        This method helps to search through the credential list using the username.
         '''
         for credential in cls.credential_list:
             if credential.user_account == user_account:
                 return credential
+
+    @classmethod
+    def copy_credential(cls,user_account):
+        '''
+        This method allows a user copy the generated password on the clipboard
+        '''
+        find_credential = Credentials.find_by_name(user_account)
+        return pyperclip.copy(find_credential.account_password)
+
+
 
     @classmethod
     def display_credential(cls):
@@ -40,6 +51,7 @@ class Credentials:
 
     def generate_password(stringLength=8,char= string.ascii_letters+string.digits):
       '''
+      This is a method to generate random string passwords for the application
       '''
 
       gen_pass = ''.join(random.choice(char) for i in range(stringLength))

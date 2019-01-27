@@ -16,11 +16,6 @@ def save_user(user):
     '''
     user.save_user()
 
-#def check_user(user):
-    '''
-   This function verifies a user before giving access 
-    '''
- #   checking_user= User.check_user(user_name,password)
 
 def del_user(user):
     '''
@@ -56,14 +51,21 @@ def verify_user(name):
  
 def find_credentials(user_account):
    '''
-
+     Function to find stored credentials
     '''
    return Credentials.find_by_name(user_account)
 
 def check_existing_credentials(name):
    '''
+   Function to check if an inputed credential name exists
     '''
    return Credentials.find_by_name(name)
+
+def copy_credential(user_account):
+	'''
+	Function to copy a credentials details to the clipboard
+	'''
+	return Credentials.copy_credential(user_account)
 
 def display_credential():
     '''
@@ -73,6 +75,7 @@ def display_credential():
 
 def generate_password():
     '''
+    This is a function to generate random password
     '''
     gen_pass = Credentials.generate_password()
     return gen_pass
@@ -157,6 +160,7 @@ def main():
                       print("c: Delete credentials")
                       print("d: Find an account")
                       print("e: logout")
+                      print("copy: copy information")
                       option = input()
                       if option == 'e':
                           print("bye....")
@@ -230,6 +234,12 @@ def main():
                                 else:
                                      print("The credential doesn't exist")
                                      break
+                      elif option == copy:
+                          print("")
+                          this_account = input("Enter Account name for password to copy: ")
+                          copy_credential(this_account)
+                          print("")
+                        
 
 
           elif short_code == "li":
