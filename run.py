@@ -47,18 +47,18 @@ def delete_credentials(credential):
     '''
     return Credentials.delete_credential(credential)
 
-def verify_user(user_name,password):
+def verify_user(name):
 	'''
 	Function that checks if the username already exists in the system
 	'''
-	checking_user = Credentials.check_user(user_name,password)
+	checking_user = Credentials.find_by_name(name)
 	return checking_user
  
-#def find_credentials(name):
- #   '''
+def find_credentials(user_account):
+   '''
 
- #   '''
-   # return Credentials.find_by_name(user_account)
+    '''
+   return Credentials.find_by_name(user_account)
 
 #def check_existing_credentials(name):
 #    '''
@@ -70,6 +70,12 @@ def display_credentials():
     Function to display credentials of an account
     '''
     return Credentials.display_credential()
+
+def generate_password(account_password):
+    '''
+    '''
+    gen_pass = Credentials.generate_password()
+    return gen_pass
 
 def main():
       print("")
@@ -124,13 +130,14 @@ def main():
                  confirm_password = str(input ("Please confirm your password:- "))
 
              else:
-                 
-
                  print(f" Congratulations {user_name}! You have created your account.")
                  print(" ")
                  print(" Now login to to your credential Account")
                  new_user_name = input("Please enter your username :-  ") 
                  new_password = str(input ("Please enter your password:- ")) 
+                 save_user(create_user(first_name,user_name,password))
+                 print("")
+                 print(f"New account has been created for : {first_name} \n with username :{user_name} \n using password: {password}")
                   
              while new_user_name !=  user_name or new_password != password:
                  print("you have entered a wrong username and password")
@@ -141,13 +148,41 @@ def main():
                  print(f"Welcome {new_user_name} to your Credential Account")
                  print(" ")
 
+                 print("Select an option below to continue: Enter a,b,c ,d or e")
+                 print("")
 
+                 while True:
+                     print("a : View your save accounts")
+                     print("b : Add a new account")
+                     print("c : Delete credentials")
+                     print("d : Find an account")
+                     print("e : Print your accounts")
+                     option = input()
 
-            
+                 if option == 'b':
+                     while True:
+                         print("do you want to add an account y/n")
 
-             save_user(create_user(first_name,user_name,password))
-             print("")
-             print(f"New account has been created for : {first_name} \n with username :{user_name} \n using password: {password}")
+                         choice = input().lower()
+                         if choice == "y":
+                             print ("Enter Account Name")
+                             user_account = input()
+                             print("Enter your desired password")
+                             print("To use your own password use 'p' or Generate a random one use 'g' ")
+                             keyword = input().lower()
+                             if keyword == "p" :
+                              print("Create your own password : ")
+                              account_password = input()
+                              print(f" Account : {user_account}")
+                              print(f" Password : {account_password}")
+                              print(" ")
+
+                         elif keyword == "g":
+                            account_password = generate_password()
+                            break
+
+                        
+                     
 
           elif short_code == "li":
               print("-"*60)
@@ -155,7 +190,7 @@ def main():
               print(" To login , enter your account deails : ")
               user_name = input("Enter your usename name :- ")
               password = str(input("Enter your password :- "))
-              user_exists = verify_user(user_name,password)
+              user_exists = verify_user(user_name)
 
           if user_exists == user_name :
               print(" ")

@@ -1,8 +1,8 @@
-import unittest # Importing the unittest module
-from user import User # Importing the contact class
+import unittest 
+from user import User 
 import pyperclip
 
-class TestContact(unittest.TestCase):
+class TestUser(unittest.TestCase):
 
     '''
     Test class that defines test cases for the class behaviours.
@@ -11,7 +11,7 @@ class TestContact(unittest.TestCase):
 
     def setUp(self):
         '''
-        Set up method to run before each test cases tp check if the class initialized properly
+        Set up method to run before each test cases tp check if the class initialized
         '''
         self.new_user = User("Oluwadamilola","Shabi","flower12")
     def test_init(self):
@@ -25,16 +25,16 @@ class TestContact(unittest.TestCase):
      
     def test_save_user(self):
         '''
-        test_save_contact test case to test if the contact object is saved into
-         the contact list
+        test_save_user test case to test if the user object is saved into
+         the user list
         '''
         self.new_user.save_user() 
         self.assertEqual(len(User.user_list),1)  
 
     def test_save_multiple_user(self):
             '''
-            test_save_multiple_contact to check if we can save multiple contact
-            objects to our contact_list
+            test_save_multiple_user to check if we can save multiple user
+            objects to our user_list
             '''
             self.new_user.save_user()
             test_user = User("user","user","users") 
@@ -42,5 +42,5 @@ class TestContact(unittest.TestCase):
             self.assertEqual(len(User.user_list),2)
             
 if __name__ ==  '__main__':
-    unittest.main()        
+    unittest.main()
 

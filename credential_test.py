@@ -22,7 +22,7 @@ class TestCredential(unittest.TestCase):
 
     def test_save_credential(self):
         '''
-        test_save_contact test case to test if  credentials object are saved into
+        test_save_credential test case to test if  credentials object are saved into
          the credential list
         '''
         self.new_credential.save_credential() 
@@ -30,8 +30,8 @@ class TestCredential(unittest.TestCase):
     
     def test_save_multiple_credentials(self):
             '''
-            test_save_multiple_contact to check if we can save multiple contact
-            objects to our contact_list
+            test_save_multiple_credential to check if we can save multiple credential
+            objects to our credential_list
             '''
             self.new_credential.save_credential()
             test_credential = Credentials("user","user123") 

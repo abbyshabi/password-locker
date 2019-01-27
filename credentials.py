@@ -1,3 +1,7 @@
+import pyperclip
+import random
+import string
+
 class Credentials:
     ''' The credentials class would hold all the information of the user
     '''
@@ -18,6 +22,7 @@ class Credentials:
         '''
 
         Credentials.credential_list.remove(self)
+
     @classmethod
     def find_by_name(cls,user_account):
         '''
@@ -32,3 +37,10 @@ class Credentials:
         Method which displays all credentials list
         """
         return cls.credential_list
+
+    def generate_password(self,stringLength=8,char= string.ascii_letters+string.digits):
+      '''
+      '''
+
+      gen_pass = ''.join(random.choice(char) for i in range(stringLength))
+      return gen_pass
