@@ -99,10 +99,10 @@ def main():
 
       print(" ")
 
-      print(" please what is your name?")
+      print("                                                                   please what is your name?")
       first_name = input()
 
-      print(f" Hello {first_name} what would you like to do today?")
+      print(f"                                                     Hello {first_name} what would you like to do today?")
       print (" ")
 
       while True:  
@@ -114,26 +114,26 @@ def main():
              print ("-"*15)
              print (" ")
              print ("To create a new user account: ")
-             first_name = input("Please enter your first name:-  ")
+             first_name = input(" Please enter your first name:-  ")
              user_name = input("Please enter your preferred username :-  ")
-             password = str(input ("Please enter your desired password:- "))
+             password = str(input (" Please enter your desired password:- "))
              confirm_password = str(input ("Please confirm your password:- "))
              save_user(create_user(first_name,user_name,password))
              print("")
-             print(f"New account has been created for : {first_name} \n with username :{user_name} \n using password: {password}")
+             print(f"                    New account has been created for : {first_name} \n with username :{user_name} \n using password: {password}")
              print("")
 
              while confirm_password != password :
                  print("sorry your passwords do not match")
                  print("Enter your password again")
-                 password = str(input ("Please enter your desired password:- "))
+                 password = str(input (" Please enter your desired password:- "))
                  confirm_password = str(input ("Please confirm your password:- "))
 
              else:
                  print(f" Congratulations {user_name}! You have created your account.")
                  print(" ")
                  print(" Now login to to your credential Account")
-                 new_user_name = input("Please enter your username :-  ") 
+                 new_user_name = input("please enter your username :-  ") 
                  new_password = str(input ("Please enter your password:- ")) 
                  save_user(create_user(first_name,user_name,password))
                  print("")
@@ -161,6 +161,25 @@ def main():
                       if option == 'e':
                           print("bye....")
                           break
+                      elif option == "c":
+                          while True:
+                              print("Type credential name you want to delete......")
+                              search_account = input()
+                              if check_existing_credentials(search_account):
+                                  search_credential = find_credentials(search_account)
+                                  print(f"Account :{search_credential.user_account}\n Password: {search_credential.account_password}")
+                                  print(f"are you sure you want to delete {search_credential.user_account} ? y or n")
+                                  answer = input().lower()
+
+                                  if answer == 'y':
+                                   delete_credentials(search_credential)
+                                   print("Account has been deleted sucessfully")
+                                   break
+                                  elif answer == 'n':
+                                      continue
+                                  else:
+                                          break
+
                       elif option == "b":
                           while True:
                            print("do you want to add an account y OR n")
@@ -223,7 +242,7 @@ def main():
      
                    if user_exists == user_name :
                      print(" ")
-                     print (f" Welcome back {user_name} . /n Please choose an option to continue")
+                     print (f"Welcome back {user_name} . /n Please choose an option to continue")
                      print(" ")
     
                    while True:
@@ -289,29 +308,8 @@ def main():
                                 else:
                                      print("The credential doesn't exist")
                                      break
-
-
-                  #elif short_code == "ex":
-                  #     print("-"*60)
-                  #     print(" ")
-                  #     print(" To login , enter your account deails : ")
-                  #     break       
-
-                  #elif short_code == "ex":
-                  #     print("Bye....we hope you again visit soon")
-                  #     break
-
-                  #elif short_code == "ex":
-                  #     print("Bye....we hope you again visit soon")
-                  #     break           
-
           elif short_code == "ex":
                print("Bye....we hope you again visit soon")
                break
-
-               
-            
-
 if __name__ == '__main__':
-
     main()               
