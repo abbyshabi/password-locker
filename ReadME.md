@@ -10,8 +10,8 @@ The Password-locker is a simple python application that allows a user store user
 * Run python3.6 run.py code in the terminal to launch the application
 ## Testing the Application
 * To run tests for the class files:
-   $ python3.6 credential_test.py
-   $ python3.6 user_test.py
+  * $ python3.6 credential_test.py
+  * $ python3.6 user_test.py
 ## Behaviour Driven Development
 |Behaviour| Input | Output|
 |---------|-------|-------|
