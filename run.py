@@ -214,8 +214,8 @@ def main():
 
 
           elif short_code == "li":
+                   print("WELCOME")
                    print("-"*60)
-                   print(" ")
                    print(" To login , enter your account deails : ")
                    user_name = input("Enter your usename name :- ")
                    password = str(input("Enter your password :- "))
@@ -226,12 +226,69 @@ def main():
                      print (f" Welcome back {user_name} . /n Please choose an option to continue")
                      print(" ")
     
-                     while True:
-                      print("Please use the following short codes :\n cn - to create new credential  , \n  dc - to diplay existing credential ,\n copy- to copy password ,\n ex- to Exit")
-                      short_code = input(" Enter a choice").lower()
+                   while True:
+                      print("Select an option below to continue:")
+                      print("")
+                    
+                      print("a: View your save accounts")
+                      print("b: Add a new account")
+                      print("c: Delete credentials")
+                      print("d: Find an account")
+                      print("e: logout")
+                      option = input()
+                      if option == 'e':
+                          print("bye....")
+                          break
+                      elif option == "b":
+                          while True:
+                           print("do you want to add an account y OR n")
 
-    
+                           choice = input().lower()
+                           if choice == "y":
+                              print ("Enter Account Name")
+                              user_account = input()
+                              print("Enter your desired password")
+                              print("To use your own password use 'p' or Generate a random one use 'g' ")
+                              keyword = input().lower()
+                              if keyword == "p" :
+                               print("Create your own password : ")
+                               account_password = input()
+                               print(f" Account : {user_account}")
+                               print(f" Password : {account_password}")
+                               print(" ")
 
+                              elif keyword == "g":
+                               account_password = generate_password()
+                               print(f" Account : {user_account}")
+                               print(f" Password : {account_password}")
+                               print(" ")
+                              else:
+                               print("please create a password")
+                              save_new_credentials(create_new_credential(user_account,account_password))
+                           elif choice == "n":
+                              print("Bye .....")
+                              break
+                      elif option == "a":
+                            print("")
+                            if display_credential(): 
+                                for credential in display_credential():
+                                    print(f"Account Name : {credential.user_account}") 
+                                    print(f"Password : {credential.account_password}")
+                            else:
+                                print("")
+                                print(" You don't have any credentials yet")
+                                print("")
+                      elif option == "d":
+                            while True:
+                                print("Enter an account name to find credentials")
+                                search_account = input()
+                                if check_existing_credentials(search_account):
+                                     search_account = find_credentials(search_account)
+                                     print(f"{search_account.user_account} \n {search_account.account_password}")
+                                     print('-'*10)
+                                else:
+                                     print("The credential doesn't exist")
+                                     break
 
 
                   #elif short_code == "ex":
