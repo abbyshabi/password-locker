@@ -234,7 +234,7 @@ def main():
                                 else:
                                      print("The credential doesn't exist")
                                      break
-                      elif option == copy:
+                      elif option == "copy":
                           print("")
                           this_account = input("Enter Account name for password to copy: ")
                           copy_credential(this_account)
