@@ -155,7 +155,7 @@ def main():
                       print("Select an option below to continue:")
                       print("")
                     
-                      print("a: View your save accounts")
+                      print("a: View your saved accounts")
                       print("b: Add a new account")
                       print("c: Delete credentials")
                       print("d: Find an account")
